@@ -1,0 +1,11 @@
+sources:
+  - name: dbt-tutorial # just a name for the source
+    database: dbt-tutorial  # corresponds to the catalog name in databricks
+    schema: source  # corresponds to the schema name in databricks
+    tables:
+      - name: dim_customer
+      - name: dim_date
+      - name: dim_product
+      - name: dim_store
+      - name: fact_returns
+      - name: fact_sales
