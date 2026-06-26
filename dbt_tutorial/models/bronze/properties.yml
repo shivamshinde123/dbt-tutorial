@@ -3,11 +3,47 @@ models:
   - name: bronze_date
     config:
       materialized: table
+      schema: bronze
 
   - name: bronze_product
     config:
       materialized: table
+      schema: bronze
 
   - name: bronze_sales
     config:
       materialized: table
+      schema: bronze
+    columns:
+      - name: sales_id
+        data_tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+
+      - name: gross_amount
+        data_tests:
+          - generic_non_negative
+
+  - name: bronze_store
+    config:
+      materialized: table
+      schema: bronze
+    columns:
+      - name: store_sk
+        data_tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+
+
+
+
+
+
