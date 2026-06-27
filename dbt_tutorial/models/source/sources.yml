@@ -1,6 +1,6 @@
 sources:
   - name: dbt-tutorial # just a name for the source
-    database: dbt-tutorial  # corresponds to the catalog name in databricks
+    database: '{{ target.catalog }}'  # corresponds to the catalog name in databricks
     schema: source  # corresponds to the schema name in databricks
     tables:
       - name: dim_customer
